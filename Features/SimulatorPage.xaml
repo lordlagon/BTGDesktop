@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="BTGDesktop.SimulatorPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BTGDesktop"
+    Title="SimulatorPage">
+    <Grid
+        Margin="16"
+        ColumnDefinitions="*,Auto"
+        RowDefinitions="Auto, Auto, Auto, Auto, Auto">
+        <local:EntryFloatLabel Title="Preço inicial" Grid.Column="1" />
+        <local:EntryFloatLabel
+            Title="Preço inicial"
+            Grid.Row="1"
+            Grid.Column="1" />
+        <local:EntryFloatLabel
+            Title="Preço inicial"
+            Grid.Row="2"
+            Grid.Column="1" />
+        <local:EntryFloatLabel
+            Title="Preço inicial"
+            Grid.Row="3"
+            Grid.Column="1" />
+        <Button
+            Grid.Row="4"
+            Grid.Column="1"
+            Margin="0,24,0,0"
+            Text="Gerar Simulação" />
+    </Grid>
+</ContentPage>
