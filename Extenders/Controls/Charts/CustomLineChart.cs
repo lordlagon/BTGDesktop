@@ -217,7 +217,7 @@ public partial class CustomLineChart : SKCanvasView
         {
             for (var i = 1; i <= _scaleGraphic; i++)
             {
-                var v = valorLegenda.ToString("N2") + "%";
+                var v = valorLegenda.FloatParaReal();
                 var y = marginTop + (((MaxValue - valorLegenda) / this.ValueRange) * height);
                 canvas.DrawText(v, 0, y, legendaPaint);
                 valorLegenda += intervaloValoresLegenda;
