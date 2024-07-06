@@ -168,7 +168,7 @@ public partial class EntryFloatLabel : Grid
         uint rate = 5;
         uint length = 100;
         Easing easing = Easing.Linear;
-
+       
         LabelTitle.Animate("invis", callback, startingHeight, endingHeight, rate, length, easing, (v, c) => taskCompletionSource.SetResult(c));
         return taskCompletionSource.Task;
     }
@@ -191,6 +191,7 @@ public partial class EntryFloatLabel : Grid
             if (e.NewTextValue.Any(char.IsLetter) || e.NewTextValue.Contains(" "))
             {
                 string result = Regex.Replace(e.NewTextValue, @"[a-zA-Z\s+]", "");
+
                 var entry = sender as Entry;
                 if (e.OldTextValue == null)
                 {

@@ -2,8 +2,9 @@ namespace BTGDesktop;
 
 public partial class SimulatorPage : ContentPage
 {
-	public SimulatorPage()
-	{
-		InitializeComponent();
-	}
+    public SimulatorPage(SimulatorViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
+    }
 }

@@ -4,28 +4,51 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BTGDesktop"
-    Title="SimulatorPage">
+    Title="SimulatorPage"
+    x:DataType="local:SimulatorViewModel">
     <Grid
         Margin="16"
-        ColumnDefinitions="*,Auto"
-        RowDefinitions="Auto, Auto, Auto, Auto, Auto">
-        <local:EntryFloatLabel Title="Preço inicial" Grid.Column="1" />
+        ColumnDefinitions="6*,*"
+        RowDefinitions="Auto, Auto, Auto, Auto, Auto,*">
+        <local:CustomLineChart
+            Grid.RowSpan="6"
+            HorizontalOptions="FillAndExpand"
+            LineChartDefinition="{Binding Definition}"
+            VerticalOptions="FillAndExpand" />
         <local:EntryFloatLabel
-            Title="Preço inicial"
+            Title="Preço Inicial"
+            Grid.Column="1"
+            IsOnlyNumber="True"
+            Keyboard="Numeric"
+            Text="{Binding InitialPrice}" />
+        <local:EntryFloatLabel
+            Title="Volatilidade(%)"
             Grid.Row="1"
-            Grid.Column="1" />
+            Grid.Column="1"
+            IsOnlyNumber="True"
+            Keyboard="Numeric"
+            Text="{Binding Volatility}" />
         <local:EntryFloatLabel
-            Title="Preço inicial"
+            Title="Retorno médio(%)"
             Grid.Row="2"
-            Grid.Column="1" />
+            Grid.Column="1"
+            IsOnlyNumber="True"
+            Keyboard="Numeric"
+            Text="{Binding Mean}" />
         <local:EntryFloatLabel
-            Title="Preço inicial"
+            Title="Tempo (dias)"
             Grid.Row="3"
-            Grid.Column="1" />
+            Grid.Column="1"
+            IsOnlyNumber="True"
+            Keyboard="Numeric"
+            Text="{Binding Duration}" />
         <Button
             Grid.Row="4"
             Grid.Column="1"
             Margin="0,24,0,0"
+            Command="{Binding GenerateSimulatorCommand}"
             Text="Gerar Simulação" />
+
+
     </Grid>
 </ContentPage>
